@@ -7,11 +7,34 @@
     background: #00000080;
     padding: 20px 50px;
 }
-
+#tabla-Funcionario{
+    margin-left: 200px;
+    border: 1px solid #000;
+}
+th,td{
+    border: 1px solid #000;
+}
+#imgDB{
+    width: 120px; height: 110px;
+}
 #login-box h1 {
     color: white;
 }
-
+#text-Imagen{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+#text-nombre{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+#subir-imagen{
+    margin-left: 250px;
+    margin-top: 10px;
+}
+#mostrar-tabla{
+    margin-left: 350px;
+}
 
 body {
     margin: 0;
