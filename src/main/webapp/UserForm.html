@@ -29,9 +29,9 @@
             </header>
             <img src="https://st2.depositphotos.com/2343527/9596/v/950/depositphotos_95968120-stock-illustration-animal-pets-grooming-and-healthcare.jpg" alt="Gatito" />
             <div class="content">
-                <form id="subida-imagenes" type="POST" enctype="multipart/formdata" >
-                    <p id="text-Imagen">Ingrese una imagen de la mascota
-                    <input type="file" id="imagen1" /></p>
+                <form  method="post" action="User-Servlet" enctype="multipart/form-data" >
+                    <p id="text-Imagen">Ingrese una imagen de la mascota</p>
+                    <input type="file" name="User-Servlet" />
                     <p id="text-nombre">Ingrese el nombre de la mascota
                     <input type="text" id="nombre-mascota"> </p>
                     <input type="submit" id="subir-imagen" value="Guardar datos" />
