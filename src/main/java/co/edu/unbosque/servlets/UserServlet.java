@@ -1,27 +1,28 @@
-package co.edu.unbosque.taller3jakarta;
+package co.edu.unbosque.servlets;
 
 import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
+
 @WebServlet(name = "UserServlet", value = "/User-Servlet")
 @MultipartConfig(
-        fileSizeThreshold = 1024*1024*10,
-        maxFileSize = 1024*1024*5*10,
-        maxRequestSize =1024*1024*5*5*10)
+        fileSizeThreshold = 1024*1024,
+        maxFileSize = 1024*1024*5,
+        maxRequestSize =1024*1024*5*5)
 public class UserServlet extends HttpServlet {
 
     private String UPLOAD_DIRECTORY ="uploads";
 
-    private String message;
     public void init() {
-        message = "Hello World!";
+
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
             response.setContentType("text/html");
-
+            String message;
+            System.out.println("name: "+request.getParameter("name"));
             String uploadPath = getServletContext().getRealPath("")+File.separator+UPLOAD_DIRECTORY;
             File uploadDir = new File(uploadPath);
             if(!uploadDir.exists()){
@@ -29,18 +30,25 @@ public class UserServlet extends HttpServlet {
             }
             String fileName="";
             try{
-
                 for (Part part : request.getParts()) {
                     fileName = part.getSubmittedFileName();
                     part.write(uploadPath + File.separator + fileName);
                 }
-                request.setAttribute("message","fiel"+fileName+"has uploades sucessfully");
+                 message= ("file "+fileName+" has uploads sucessfully");
+                request.setAttribute("message","fiel"+fileName+"has uploads sucessfully");
             }catch (IOException fne){
-                System.out.println("eror catch");
+                System.out.println("error catch");
+                message=("There was an error "+fne.getMessage());
                 request.setAttribute("message","There was an error"+fne.getMessage());
             }
-            //getServletContext().getRequestDispatcher("/result.jsp").forward(request,response);
+
+        Cookie cookie = new Cookie("request",message+"");
+        cookie.setMaxAge(5);
+        response.addCookie(cookie);
+        PrintWriter out = response.getWriter();
+        out.println("<meta http-equiv='refresh' content='1; URL=UserForm.html'>");
     }
+
 
     public void destroy() {
     }
