@@ -7,7 +7,6 @@ let userName;
 
 for(let i = 0; i <ca.length; i++) {
     let c = ca[i];
-
     let part = c.split('=');
     if(part[0]===" username"){
         userName=part[1]

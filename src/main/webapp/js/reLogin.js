@@ -4,10 +4,11 @@ let cookies = document.cookie
 let decodedCookie = decodeURIComponent(cookies);
 let ca = decodedCookie.split(';');
 var aux=0;
+
 for(let i = 0; i <ca.length; i++) {
     let c = ca[i];
     let part = c.split('=');
-    if(part[0]===" username"||part[0]==="password"){
+    if(part[0]==="username"||part[0]==="password"||part[0]===" username"||part[0]===" password"){
         aux++;
     }
 

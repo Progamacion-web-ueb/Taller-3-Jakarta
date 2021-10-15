@@ -13,12 +13,12 @@ for(let i = 0; i <ca1.length; i++) {
     var aux;
     for(aux=1;aux<=100;aux++){
         if(parts[0]===" "+aux||parts[0]===""+aux){
-            while (c.charAt(0) == ' ') {
+           // while (c.charAt(0) == ' ') {
                 c = c.substring(1);
                 value =(c.substring(name.length));
                 cokieData.push(value);
 
-            }
+            //}
         }
     }
 }
