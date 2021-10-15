@@ -36,11 +36,11 @@ public class LoginServlet extends HttpServlet {
                 aux++;
                 response.setContentType("text/html");
                 Cookie cookieE = new Cookie("username",emailDb);
-                cookieE.setMaxAge(100000);
+                cookieE.setMaxAge(3600);
                 Cookie cookieP = new Cookie("password",passwordDb);
-                cookieP.setMaxAge(100000);
+                cookieP.setMaxAge(3600);
                 Cookie cookieR = new Cookie("role",(roleDb+""));
-                cookieR.setMaxAge(100000);
+                cookieR.setMaxAge(3600);
                 response.addCookie(cookieE);
                 response.addCookie(cookieP);
                 response.addCookie(cookieR);
