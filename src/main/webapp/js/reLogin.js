@@ -1,4 +1,3 @@
-
 let name = "username" + "=";
 let name1 = "role" + "=";
 let cookies = document.cookie
@@ -8,7 +7,7 @@ var aux=0;
 for(let i = 0; i <ca.length; i++) {
     let c = ca[i];
     let part = c.split('=');
-    if(part[0]===" username"||part[0]===" password"){
+    if(part[0]===" username"||part[0]==="password"){
         aux++;
     }
 

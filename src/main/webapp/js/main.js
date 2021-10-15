@@ -1,6 +1,4 @@
 
-
-
 let name = "request" + "=";
 let cookies = document.cookie
 let decodedCookie = decodeURIComponent(cookies);

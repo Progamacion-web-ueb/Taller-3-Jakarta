@@ -10,27 +10,28 @@ let cokieData = [ ];
 for(let i = 0; i <ca1.length; i++) {
     let c = ca1[i];
     let parts = c.split('=');
-    var aux=21;
+    var aux;
     for(aux=1;aux<=100;aux++){
-        if(parts[0]===" "+aux+""){
+        if(parts[0]===" "+aux||parts[0]===""+aux){
             while (c.charAt(0) == ' ') {
                 c = c.substring(1);
                 value =(c.substring(name.length));
                 cokieData.push(value);
+
             }
         }
     }
 }
-
-
+console.log(cokieData)
 /*
 let parte1 = value.split('=');
 let valueDate=parte1[0];
-console.log(parte1[0])
+
 console.log(parte1[1])
 console.log(parte1[2])
 */
 //uploads/17010.jpg
+
 let url=(location.href);
 let parteUrl = url.split('/Of');
 
